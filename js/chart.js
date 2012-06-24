@@ -4,13 +4,6 @@ $('#map').click(
 });
 $('#map').click(
 function () {
-        /**
-         * Visualize an HTML table using Highcharts. The top (horizontal) header
-         * is used for series names, and the left (vertical) header is used
-         * for category names. This function is based on jQuery.
-         * @param {Object} table The reference to the HTML table to visualize
-         * @param {Object} options Highcharts options
-         */
        	Highcharts.setOptions({
 			colors:['rgb(242,92,91)','rgb(229,171,157)','rgb(50,12,1)','rgb(97,165,90)','rgb(166,151,130)','rgb(106,57,87)']
 					});
@@ -146,7 +139,7 @@ function () {
 // First crime-specific 
 	$('#map').click(
 		function () {
-	    var table = document.getElementById('rape'),
+	    var table = document.getElementById('stop'),
 	    options = {
 	        chart: {
 	            renderTo: 'chart1',
@@ -252,13 +245,14 @@ $('#map').click(
             renderTo: 'chart2',
             type: 'column',
             marginRight: 10,
-            marginBottom:10,
-			marginTop:30,
+            marginBottom:30,
+			marginTop:3,
             zoomType: 'xy',
 			backgroundColor:'transparent'
         },
        title: {
-            text: 'Reported Rapes',
+			enabled: false,
+            text: '',
             x: -20,
 			y:35,
          	style: {
@@ -274,7 +268,7 @@ $('#map').click(
 				style: {
             		color: 'rgb(65,68,73)',
             		fontWeight: 'normal',
-            		fontSize: '12pt',
+            		fontSize: '7pt',
             		fontFamily: '"OpenSansItalic","Helvetica", Arial, "Pt Sans", sans-serif'
 				}
          	},
@@ -292,7 +286,7 @@ $('#map').click(
 	         	style: {
 	            	color: 'rgb(65,68,73)',
 	            	fontWeight: 'regular',
-	            	fontSize: '12pt',
+	            	fontSize: '8pt',
 	            	fontFamily: '"OpenSansRegular","Helvetica", Arial, "Pt Sans", sans-serif'
 	         	}
 			},
@@ -344,14 +338,7 @@ $('#map').click(
 
 $('#map').click(
 function () {
-        /**
-         * Visualize an HTML table using Highcharts. The top (horizontal) header
-         * is used for series names, and the left (vertical) header is used
-         * for category names. This function is based on jQuery.
-         * @param {Object} table The reference to the HTML table to visualize
-         * @param {Object} options Highcharts options
-         */
-       	Highcharts.setOptions({
+               	Highcharts.setOptions({
 			colors:['rgb(242,92,91)','rgb(229,171,157)','rgb(50,12,1)','rgb(97,165,90)','rgb(166,151,130)','rgb(106,57,87)']
 					});
  		Highcharts.visualize = function(table, options) {
