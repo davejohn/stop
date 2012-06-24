@@ -11,7 +11,8 @@
             features: [
                 'tooltips',        
                 'zoompan',
-                'legend'
+                'legend',
+				'bwselect'
             ]
          });
 
@@ -29,7 +30,8 @@
                 features: [
                     'tooltips',        
                     'zoompan',
-                    'legend'
+                    'legend',
+					'bwselect'
                 ],
                 initial:true
 			}
