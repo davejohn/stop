@@ -374,7 +374,7 @@ function () {
             var chart = new Highcharts.Chart(options);
         };
     
-        var table = document.getElementById('stop'),
+        var table = document.getElementById('cpcttot'),
         options = {
             chart: {
                 renderTo: 'chart5',
@@ -469,3 +469,137 @@ function () {
 		};
         Highcharts.visualize(table, options);
     });
+
+	$('#map').click(
+	function () {
+	               	Highcharts.setOptions({
+				colors:['rgb(242,92,91)','rgb(229,171,157)','rgb(50,12,1)','rgb(97,165,90)','rgb(166,151,130)','rgb(106,57,87)']
+						});
+	 		Highcharts.visualize = function(table, options) {
+	            // the categories
+	            options.xAxis.categories = [];
+	            $('tbody th', table).each( function(i) {
+	                options.xAxis.categories.push(this.innerHTML);
+	            });
+
+	            // the data series
+	            options.series = [];
+	            $('tr', table).each( function(i) {
+	                var tr = this;
+	                $('th, td', tr).each( function(j) {
+	                    if (j > 0) { // skip first column
+	                        if (i == 0) { // get the name and init the series
+	                            options.series[j - 1] = {
+	                                name: this.innerHTML,
+	                                data: [],
+									marker: {
+										symbol: 'circle',
+										radius:2
+
+									}
+	                            };
+	                        } else { // add values
+	                            options.series[j - 1].data.push(parseFloat(this.innerHTML));
+	                        }
+	                    }
+	                });
+	            });
+
+	            var chart = new Highcharts.Chart(options);
+	        };
+
+	        var table = document.getElementById('ccrmcombined'),
+	        options = {
+	            chart: {
+	                renderTo: 'chart6',
+	                type: 'spline',
+	                marginRight: 130,
+	                marginBottom:90,
+					marginTop:60,
+	                zoomType: 'xy',
+					backgroundColor:'transparent'
+	            },
+	 	       title: {
+		            text: 'CompStat Crime Rates: 1993, 1995, 1998, 2001, 2011',
+		            x: -20,
+					y:35,
+		         	style: {
+		            	color: 'rgb(65,68,73)',
+		            	fontWeight: 'regular',
+		            	fontSize: '19pt',
+		            	fontFamily: '"OpenSansSemiBold","Helvetica", Arial, "Pt Sans", sans-serif'
+		         	}
+		        },
+	            xAxis: {
+					labels: {
+						style: {
+		            		color: 'rgb(65,68,73)',
+		            		fontWeight: 'normal',
+		            		fontSize: '12pt',
+		            		fontFamily: '"OpenSansItalic","Helvetica", Arial, "Pt Sans", sans-serif'
+						}
+		         	}
+
+	            },
+	            yAxis: {
+	                title: {
+	                    text: 'Crimes Reported in CompStat',
+			         	style: {
+			            	color: 'rgb(65,68,73)',
+			            	fontWeight: 'regular',
+			            	fontSize: '12pt',
+			            	fontFamily: '"OpenSansRegular","Helvetica", Arial, "Pt Sans", sans-serif'
+			         	}
+					},
+					labels: {
+						style: {
+			            	color: 'rgb(65,68,73)',
+			            	fontWeight: 'normal',
+			            	fontSize: '12pt',
+			            	fontFamily: '"OpenSansItalic","Helvetica", Arial, "Pt Sans", sans-serif'
+						}
+	                },
+	                startOnTick: false,
+	                maxPadding: 0
+
+	            },
+	            tooltip: {
+					borderRadius:'.25em',
+					borderWidth:'.5px',
+					backgroundColor:'transparent',
+					borderColor:'rgba(65,68,73,.6)',
+					shadow:false,
+	                formatter: function() {
+	                    return '<span class="top">' + this.y + ' reports of ' + this.series.name + ' in ' + this.x + '</span>' ;
+						},
+					style: {
+							color: 'rgb(65,68,73)',
+							fontWeight:'regular',
+							fontSize:'22pt',
+							fontFamily:'"OpenSansSemiBold","Helvetica", Arial, "Pt Sans", sans-serif',
+							padding:'15',
+							marginBottom:'5',
+							marginTop: '5'
+					},
+					useHTML: true,
+					positioner: function () {
+		                return { x: 50, y:330 };
+		            }
+	            },
+	            legend: {
+	                layout: 'vertical',
+	                align: 'right',
+	                verticalAlign: 'top',
+	                x: 5,
+	                y: 100,
+	                borderWidth: 0,
+					itemStyle: {
+						color:'rgb(65,68,73)',
+						fontWeight:'normal',
+						fontSize:'10pt',
+						fontFamily:'"OpenSansLight","Helvetica", Arial, "Pt Sans", sans-serif'
+					}
+	            }
+			};
+	        Highcharts.visualize(table, options);
+	    });

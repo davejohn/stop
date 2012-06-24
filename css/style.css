@@ -260,3 +260,8 @@ tr, th, tbody, thead
 	-webkit-box-shadow: 5px 10px 10px -10px #444;
 	box-shadow: 5px 10px 10px -10px #444;
 	}
+.grid .triple {
+	position:relative;
+	height:200px;
+	width:300px;
+}
