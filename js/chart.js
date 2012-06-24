@@ -139,11 +139,11 @@ function () {
 // First crime-specific 
 	$('#map').click(
 		function () {
-	    var table = document.getElementById('stop'),
+	    var table = document.getElementById('race'),
 	    options = {
 	        chart: {
 	            renderTo: 'chart1',
-	            type: 'spline',
+	            type: 'column',
 	            marginRight: 10,
 	            marginBottom:10,
 				marginTop:30,
@@ -151,7 +151,7 @@ function () {
 				backgroundColor:'transparent'
 	        },
 	       title: {
-	            text: 'Reported Rapes',
+	            text: 'Race',
 	            x: -20,
 				y:35,
 	         	style: {
@@ -374,11 +374,11 @@ function () {
             var chart = new Highcharts.Chart(options);
         };
     
-        var table = document.getElementById('race'),
+        var table = document.getElementById('stop'),
         options = {
             chart: {
                 renderTo: 'chart5',
-                type: 'column',
+                type: 'spline',
                 marginRight: 130,
                 marginBottom:90,
 				marginTop:60,

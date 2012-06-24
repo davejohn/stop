@@ -18,7 +18,7 @@
        main.layers({
 
             home: {
-                api: 'http://a.tiles.mapbox.com/v3/herwig.nyc-007.jsonp',
+                api: 'http://a.tiles.mapbox.com/v3/herwig.nyc-01.jsonp',
                 center: {
                         lat: 40.63,
                         lon: -73.9,
