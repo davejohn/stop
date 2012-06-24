@@ -1,0 +1,12 @@
+[submodule "js/ext/modestmaps-js"]
+	path = js/ext/modestmaps-js
+	url = git://github.com/stamen/modestmaps-js.git
+[submodule "js/ext/easey"]
+	path = js/ext/easey
+	url = git@github.com:mapbox/easey.git
+[submodule "js/ext/d3"]
+	path = js/ext/d3
+	url = git://github.com/mbostock/d3.git
+[submodule "js/ext/wax"]
+	path = js/ext/wax
+	url = git@github.com:mapbox/wax.git
